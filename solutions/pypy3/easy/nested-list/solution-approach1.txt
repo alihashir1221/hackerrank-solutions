@@ -1,0 +1,47 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+# Problem     Nested Lists
+# Difficulty  Easy
+# Subdomain   Basic Data Types
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-10-06, 08:57 p.m.
+# ──────────────────────────────────────────────────
+
+students = []
+
+n = int(input())
+
+for i in range(n):
+    name = input()
+    grade = float(input())
+    students.append([name, grade])
+
+# Get all unique grades
+grades = []
+
+for student in students:
+    if student[1] not in grades:
+        grades.append(student[1])
+
+# Sort grades
+grades.sort()
+
+# Second lowest grade
+second_lowest = grades[1]
+
+# Get names having second lowest grade
+names = []
+
+for student in students:
+    if student[1] == second_lowest:
+        names.append(student[0])
+
+# Sort names alphabetically
+names.sort()
+
+# Print each name
+for name in names:
+    print(name)
+        
